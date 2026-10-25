@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneScan Varanasi | Trip Verification</title>
+
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #3d1b16,
+                    #6b3025
+                );
+
+            min-height: 100vh;
+
+            color: #3d241c;
+
+        }
+
+
+        /* NAVBAR */
+
+        .navbar {
+
+            background: #351615;
+
+            color: white;
+
+            padding: 18px 7%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+        .logo {
+
+            font-size: 23px;
+
+            font-weight: bold;
+
+        }
+
+
+        .home {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+
+        /* CONTAINER */
+
+        .container {
+
+            max-width: 850px;
+
+            margin: 45px auto;
+
+            padding: 20px;
+
+        }
+
+
+        /* VERIFICATION */
+
+        .verification {
+
+            background: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 45px rgba(0,0,0,0.35);
+
+        }
+
+
+        .verified-header {
+
+            background: #28753a;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+
+        }
+
+
+        .check {
+
+            width: 70px;
+
+            height: 70px;
+
+            margin: auto;
+
+            background: white;
+
+            color: #28753a;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 40px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .verified-header h1 {
+
+            font-size: 32px;
+
+            margin-bottom: 8px;
+
+        }
+
+
+        .verified-header p {
+
+            font-size: 15px;
+
+        }
+
+
+        /* BODY */
+
+        .content {
+
+            padding: 35px;
+
+        }
+
+
+        .trip-id {
+
+            text-align: center;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .trip-id span {
+
+            color: #777;
+
+            font-size: 14px;
+
+        }
+
+
+        .trip-id strong {
+
+            display: block;
+
+            font-size: 27px;
+
+            color: #4d2220;
+
+            margin-top: 5px;
+
+        }
+
+
+        /* DETAILS */
+
+        .details {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+
+        }
+
+
+        .detail {
+
+            background: #f8f1e6;
+
+            padding: 18px;
+
+            border-radius: 10px;
+
+        }
+
+
+        .detail span {
+
+            display: block;
+
+            color: #777;
+
+            font-size: 13px;
+
+            margin-bottom: 6px;
+
+        }
+
+
+        .detail strong {
+
+            color: #4d2220;
+
+            font-size: 17px;
+
+        }
+
+
+        /* SERVICES */
+
+        .services {
+
+            margin-top: 30px;
+
+        }
+
+
+        .services h2 {
+
+            color: #4d2220;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .service-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+
+        }
+
+
+        .service {
+
+            padding: 14px;
+
+            background: #faf7f1;
+
+            border: 1px solid #eee;
+
+            border-radius: 8px;
+
+        }
+
+
+        /* MESSAGE */
+
+        .message {
+
+            margin-top: 30px;
+
+            padding: 20px;
+
+            background: #fff8e8;
+
+            border-left: 4px solid #d88918;
+
+            line-height: 1.6;
+
+        }
+
+
+        .message strong {
+
+            color: #4d2220;
+
+        }
+
+
+        /* FOOTER */
+
+        .footer {
+
+            text-align: center;
+
+            color: white;
+
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            line-height: 1.6;
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 650px) {
+
+            .details {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .service-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .content {
+
+                padding: 25px;
+
+            }
+
+
+            .verified-header h1 {
+
+                font-size: 27px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            🛕 OneScan Varanasi
+
+        </div>
+
+
+        <a
+            href="index.html"
+            class="home"
+        >
+
+            ← Home
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- MAIN -->
+
+    <main class="container">
+
+
+        <section class="verification">
+
+
+            <!-- VERIFIED -->
+
+            <div class="verified-header">
+
+                <div class="check">
+
+                    ✓
+
+                </div>
+
+
+                <h1>
+
+                    TRIP VERIFIED
+
+                </h1>
+
+
+                <p>
+
+                    Your OneScan Varanasi Pass is valid.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="content">
+
+
+                <!-- TRIP ID -->
+
+                <div class="trip-id">
+
+                    <span>
+
+                        OneScan Trip ID
+
+                    </span>
+
+
+                    <strong id="tripId">
+
+                        --
+
+                    </strong>
+
+                </div>
+
+
+
+                <!-- DETAILS -->
+
+                <div class="details">
+
+
+                    <div class="detail">
+
+                        <span>
+                            👥 Travellers
+                        </span>
+
+                        <strong id="people">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>
+                            📅 Duration
+                        </span>
+
+                        <strong id="days">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>
+                            💰 Budget
+                        </span>
+
+                        <strong id="budget">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail">
+
+                        <span>
+                            💳 Estimated Cost
+                        </span>
+
+                        <strong id="cost">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- SERVICES -->
+
+                <div class="services">
+
+                    <h2>
+                        ✓ Integrated Trip Services
+                    </h2>
+
+
+                    <div class="service-grid">
+
+
+                        <div class="service">
+                            🏨 Accommodation
+                        </div>
+
+
+                        <div class="service">
+                            🚕 Transportation
+                        </div>
+
+
+                        <div class="service">
+                            🛕 Temple Visits
+                        </div>
+
+
+                        <div class="service">
+                            🌊 Ganga Experiences
+                        </div>
+
+
+                        <div class="service">
+                            🍛 Food Experiences
+                        </div>
+
+
+                        <div class="service">
+                            🛍️ Local Experiences
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- MESSAGE -->
+
+                <div class="message">
+
+                    <strong>
+                        One QR • One Trip • One Pass
+                    </strong>
+
+                    <br>
+
+                    This QR represents your unified
+                    Varanasi travel pass. Your selected
+                    travel services are connected to this
+                    trip ID.
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <div class="footer">
+
+            🛕 OneScan Varanasi
+
+            <br>
+
+            Smart Tourism & Integrated Travel Prototype
+
+        </div>
+
+
+    </main>
+
+
+
+    <script>
+
+
+       /* =========================
+   GET TRIP FROM QR URL
+========================= */
+
+const params = new URLSearchParams(
+    window.location.search
+);
+
+const tripId =
+    params.get("tripId");
+
+const people =
+    params.get("people");
+
+const days =
+    params.get("days");
+
+const budget =
+    params.get("budget");
+
+const cost =
+    params.get("cost");
+
+
+/* =========================
+   DISPLAY TRIP
+========================= */
+
+if (!tripId) {
+
+    document.getElementById("tripId")
+        .textContent = "No Trip Found";
+
+} else {
+
+    document.getElementById("tripId")
+        .textContent = tripId;
+
+    document.getElementById("people")
+        .textContent = people;
+
+    document.getElementById("days")
+        .textContent =
+            days + (Number(days) === 1
+                ? " Day"
+                : " Days");
+
+    document.getElementById("budget")
+        .textContent =
+            "₹" + Number(budget)
+                .toLocaleString("en-IN");
+
+    document.getElementById("cost")
+        .textContent =
+            "₹" + Number(cost)
+                .toLocaleString("en-IN");
+}
+
+        /* IF NO TRIP */
+
+        if (!trip) {
+
+            document.getElementById("tripId")
+                .textContent =
+                "No Trip Found";
+
+        }
+
+
+        else {
+
+
+            /* TRIP ID */
+
+            document.getElementById("tripId")
+                .textContent =
+                trip.tripId;
+
+
+            /* PEOPLE */
+
+            document.getElementById("people")
+                .textContent =
+                trip.people;
+
+
+            /* DAYS */
+
+            document.getElementById("days")
+                .textContent =
+
+                trip.days
+                + (
+                    Number(trip.days) === 1
+                        ? " Day"
+                        : " Days"
+                );
+
+
+            /* BUDGET */
+
+            document.getElementById("budget")
+                .textContent =
+
+                "₹"
+                + Number(trip.budget)
+                    .toLocaleString("en-IN");
+
+
+            /* COST */
+
+            document.getElementById("cost")
+                .textContent =
+
+                "₹"
+                + Number(trip.estimatedCost)
+                    .toLocaleString("en-IN");
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>

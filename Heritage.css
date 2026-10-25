@@ -1,0 +1,548 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f3ed;
+    color: #2d2926;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    min-height: 430px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("https://i.pinimg.com/736x/22/a1/ac/22a1ac6eeadcbe2bbbaab853fa62c247.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    width: 100%;
+
+    padding: 20px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar h2 {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+.back-home {
+    color: white;
+    text-decoration: none;
+
+    padding: 8px 15px;
+
+    border: 1px solid rgba(255, 255, 255, 0.6);
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.back-home:hover {
+    background-color: white;
+    color: #333;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 40px 20px;
+
+    text-align: center;
+}
+
+.eyebrow {
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.hero-content h1 {
+    font-size: 52px;
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+.hero-content p:last-child {
+    font-size: 18px;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   INTRODUCTION
+========================= */
+
+.intro {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 65px 20px 35px;
+
+    text-align: center;
+}
+
+.section-label {
+    color: #8a5a3b;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.intro h2 {
+    font-size: 34px;
+
+    margin-bottom: 15px;
+}
+
+.intro > p:last-child {
+    color: #666;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   CATEGORY BUTTONS
+========================= */
+
+.categories {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    padding: 25px 20px 40px;
+}
+
+.category-btn {
+    border: 1px solid #d8d0c7;
+
+    background-color: white;
+
+    color: #403a35;
+
+    padding: 12px 20px;
+
+    border-radius: 25px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    transition: all 0.3s ease;
+}
+
+.category-btn:hover {
+    background-color: #8a5a3b;
+
+    color: white;
+
+    border-color: #8a5a3b;
+}
+
+.category-btn.active {
+    background-color: #8a5a3b;
+
+    color: white;
+
+    border-color: #8a5a3b;
+}
+
+
+/* =========================
+   HERITAGE GRID
+========================= */
+
+.heritage-grid {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: 0 auto 70px;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 28px;
+}
+
+
+/* =========================
+   HERITAGE CARD
+========================= */
+
+.heritage-card {
+    background-color: white;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.heritage-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.13);
+}
+
+
+/* =========================
+   CARD IMAGE
+========================= */
+
+.heritage-card > img {
+    width: 100%;
+
+    height: 230px;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.card-content {
+    padding: 22px;
+}
+
+.tag {
+    display: inline-block;
+
+    background-color: #f1e8df;
+
+    color: #7b4e32;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    margin-bottom: 12px;
+}
+
+.card-content h3 {
+    font-size: 21px;
+
+    line-height: 1.3;
+
+    margin-bottom: 7px;
+}
+
+.location {
+    color: #777;
+
+    font-size: 13px;
+
+    margin-bottom: 13px;
+}
+
+.card-content > p:not(.location) {
+    color: #666;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   EXPLORE BUTTON
+========================= */
+
+.explore-btn {
+    margin-top: 18px;
+
+    padding: 10px 18px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #8a5a3b;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #65402b;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================
+   DETAILS MODAL
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 1000;
+
+    background-color: rgba(0, 0, 0, 0.65);
+
+    padding: 20px;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.modal-content {
+    position: relative;
+
+    width: 100%;
+
+    max-width: 650px;
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    background-color: white;
+
+    border-radius: 16px;
+
+    padding: 35px;
+}
+
+.close-btn {
+    position: absolute;
+
+    top: 12px;
+
+    right: 18px;
+
+    border: none;
+
+    background: none;
+
+    color: #555;
+
+    font-size: 30px;
+
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+
+/* =========================
+   MODAL CONTENT
+========================= */
+
+.modal-tag {
+    display: inline-block;
+
+    background-color: #f1e8df;
+
+    color: #7b4e32;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    font-size: 11px;
+
+    margin-bottom: 12px;
+}
+
+.modal-content h2 {
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+.modal-location {
+    color: #777;
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+.modal-content h4 {
+    font-size: 18px;
+
+    margin-top: 20px;
+
+    margin-bottom: 7px;
+
+    color: #40342c;
+}
+
+.modal-content h4 + p {
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-content h1 {
+        font-size: 40px;
+    }
+
+    .hero-content p:last-child {
+        font-size: 16px;
+    }
+
+    .intro h2 {
+        font-size: 29px;
+    }
+
+    .heritage-grid {
+        width: 92%;
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .navbar {
+        padding: 15px 5%;
+    }
+
+    .navbar h2 {
+        font-size: 18px;
+    }
+
+    .back-home {
+        font-size: 12px;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+
+        letter-spacing: 2px;
+    }
+
+    .categories {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .category-btn {
+        width: 100%;
+    }
+
+    .modal-content {
+        padding: 28px 22px;
+    }
+
+    .modal-content h2 {
+        font-size: 25px;
+    }
+
+}

@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Culture & Traditions | Varanasi Heritage</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5efe6;
+            color: #333;
+        }
+
+        
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            padding: 12px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(67, 29, 27, 0.97);
+            box-shadow: 0 3px 15px rgba(0,0,0,0.25);
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            padding: 10px 12px;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f2c14e;
+        }
+
+        /* DROPDOWN */
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #431d1b;
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            border-radius: 4px;
+            list-style: none;
+            padding: 8px 0;
+        }
+
+        .dropdown-menu li a {
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: normal;
+        }
+
+        .dropdown-menu li a:hover {
+            background: #5a2825;
+            color: #f2c14e;
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .nav-utils {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .search-btn,
+        .admin-btn {
+            color: white;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            background: #d88925;
+            padding: 7px 14px;
+            border-radius: 4px;
+        }
+
+        .admin-btn {
+            background: transparent;
+            border: 1px solid #d88925;
+            color: #d88925;
+        }
+
+        .hero {
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,0.60),
+                    rgba(0,0,0,0.60)
+                ),
+                url("https://images.unsplash.com/photo-1599833975787-5f6c6c6c6c6c?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            padding: 30px;
+        }
+
+        .subtitle {
+            color: #f2c14e;
+            font-size: 15px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+            margin-bottom: 25px;
+            text-shadow: 2px 3px 8px #000;
+        }
+
+        .hero p:not(.subtitle) {
+            font-size: 20px;
+            line-height: 1.7;
+            text-shadow: 1px 2px 5px #000;
+        }
+
+
+        .intro {
+            padding: 80px 10%;
+            text-align: center;
+            background:
+                linear-gradient(
+                    rgba(247,241,227,0.94),
+                    rgba(247,241,227,0.94)
+                ),
+                url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+        }
+
+        .section-label {
+            color: #c47420;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .intro h2,
+        .section h2 {
+            color: #4b211f;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            max-width: 950px;
+            margin: auto;
+            font-size: 17px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+
+        .section {
+            padding: 80px 7%;
+            text-align: center;
+            background: white;
+        }
+
+        .alternate {
+            background: #f4ebd8;
+        }
+
+        .cards {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #e5e5e5;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+            transition: 0.3s;
+            text-align: left;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+        }
+
+        .card h3 {
+            color: #4b211f;
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+
+        .traditions {
+            padding: 85px 8%;
+            background: white;
+        }
+
+        .tradition-container {
+            max-width: 1100px;
+            margin: 40px auto 0;
+        }
+
+        .tradition {
+            display: flex;
+            gap: 30px;
+            padding: 25px;
+            margin-bottom: 20px;
+            background: #f8f1e5;
+            border-left: 5px solid #d88925;
+            border-radius: 8px;
+        }
+
+        .tradition-icon {
+            font-size: 45px;
+            min-width: 60px;
+        }
+
+        .tradition h3 {
+            color: #4b211f;
+            margin-bottom: 8px;
+            font-size: 22px;
+        }
+
+        .tradition p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+
+        .festival-section {
+            padding: 85px 7%;
+            background: #f4ebd8;
+            text-align: center;
+        }
+
+        .festival-grid {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .festival {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+            transition: 0.3s;
+        }
+
+        .festival:hover {
+            transform: translateY(-6px);
+        }
+
+        .festival-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .festival h3 {
+            color: #4b211f;
+            margin-bottom: 10px;
+        }
+
+        .festival p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+
+        .food-crafts {
+            padding: 85px 7%;
+            background: white;
+            text-align: center;
+        }
+
+        .food-grid {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .food-card {
+            padding: 30px;
+            background: #f8f1e5;
+            border-radius: 10px;
+            border: 1px solid #e2d7c4;
+        }
+
+        .food-card .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+
+        .food-card h3 {
+            color: #4b211f;
+            margin-bottom: 10px;
+        }
+
+        .food-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .gallery {
+            padding: 85px 7%;
+            background: #f4ebd8;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            max-width: 1200px;
+            margin: 40px auto 0;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.04);
+        }
+
+
+        .stories {
+            padding: 85px 8%;
+            background: white;
+            text-align: center;
+        }
+
+        .story-box {
+            max-width: 950px;
+            margin: 40px auto 0;
+            padding: 40px;
+            background: #f8f1e5;
+            border-radius: 12px;
+            border-top: 5px solid #d88925;
+        }
+
+        .story-box h3 {
+            color: #4b211f;
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .story-box p {
+            color: #555;
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+
+        footer {
+            background: #321615;
+            color: white;
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        footer h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #ddd;
+        }
+
+        .copyright {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #604846;
+            font-size: 14px;
+        }
+
+
+        @media(max-width: 1000px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .cards {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .festival-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+
+            .nav-links {
+                gap: 5px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+            }
+
+            .hero {
+                min-height: 550px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p:not(.subtitle) {
+                font-size: 16px;
+            }
+
+            .intro h2,
+            .section h2 {
+                font-size: 30px;
+            }
+
+            .cards,
+            .festival-grid,
+            .food-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tradition {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<nav class="navbar">
+
+    <div class="logo">⛺ Varanasi Heritage</div>
+
+    <ul class="nav-links">
+
+        <li class="nav-item">
+            <a href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+            <a href="Heritage.html">Heritage Explorer ▼</a>
+
+            <ul class="dropdown-menu">
+                <li><a href="Heritage.html">Temples & Religious Heritage</a></li>
+                <li><a href="Heritage.html">Ghats</a></li>
+                <li><a href="Heritage.html">Historical Places</a></li>
+                <li><a href="Heritage.html">Museums & Cultural Institutions</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="culture.html">Culture & Traditions ▼</a>
+
+            <ul class="dropdown-menu">
+                <li><a href="#traditions">Culture & Traditions</a></li>
+                <li><a href="#festivals">Festivals & Events</a></li>
+                <li><a href="#food">Food & Local Crafts</a></li>
+                <li><a href="#gallery">Digital Heritage Gallery</a></li>
+                <li><a href="#stories">Heritage Stories</a></li>
+            </ul>
+        </li>
+
+        <li class="nav-item">
+            <a href="Tourism.html">Tourist Guide ▼</a>
+
+            <ul class="dropdown-menu">
+                <li><a href="Tourism.html">Interactive Map</a></li>
+                <li><a href="Tourism.html">Transportation</a></li>
+                <li><a href="Tourism.html">Tourist Guide</a></li>
+            </ul>
+        </li>
+
+        <!-- PLAN YOUR TRIP -->
+
+<li class="nav-item">
+    <a href="plan.html">
+        🧳 Plan Your Trip
+    </a>
+</li>
+
+    </ul>
+
+    <div class="nav-utils">
+        <a href="#" class="search-btn">🔍 Search</a>
+        <a href="#" class="admin-btn">Admin</a>
+    </div>
+
+</nav>
+
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <p class="subtitle">CULTURE • TRADITIONS • HERITAGE</p>
+
+        <h1>The Living Culture of Varanasi</h1>
+
+        <p>
+            Discover the traditions, music, festivals, cuisine,
+            crafts and spiritual practices that make Varanasi unique.
+        </p>
+
+    </div>
+
+</header>
+
+
+<section class="intro">
+
+    <p class="section-label">THE CULTURAL SOUL</p>
+
+    <h2>Where Tradition Meets Everyday Life</h2>
+
+    <p>
+        Varanasi is renowned for its deep cultural traditions and
+        spiritual heritage. Its music, religious practices, festivals,
+        food, handloom traditions and artistic expressions form an
+        important part of the city's identity.
+    </p>
+
+</section>
+
+
+<section id="traditions" class="section alternate">
+
+    <p class="section-label">CULTURE & TRADITIONS</p>
+
+    <h2>Explore Varanasi's Cultural Heritage</h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <img class="card-image"
+                 src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80">
+
+            <div class="card-content">
+
+                <h3>Classical Music</h3>
+
+                <p>
+                    Varanasi has a rich musical tradition associated
+                    with Hindustani classical music, devotional singing
+                    and traditional musical performances.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img class="card-image"
+                 src="https://images.unsplash.com/photo-1606293926075-69a00dbfde81?auto=format&fit=crop&w=900&q=80">
+
+            <div class="card-content">
+
+                <h3>Spiritual Traditions</h3>
+
+                <p>
+                    Daily rituals, prayers, temple traditions and
+                    ceremonies along the Ganga are deeply connected
+                    with the cultural identity of Varanasi.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <img class="card-image"
+                 src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=80">
+
+            <div class="card-content">
+
+                <h3>Traditional Arts</h3>
+
+                <p>
+                    The city is associated with traditional arts,
+                    crafts, paintings, textiles and artistic
+                    practices passed through generations.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="traditions">
+
+    <p class="section-label">DAILY LIFE</p>
+
+    <h2 style="text-align:center; color:#4b211f;">
+        Living Traditions of Varanasi
+    </h2>
+
+    <div class="tradition-container">
+
+        <div class="tradition">
+
+            <div class="tradition-icon">🪔</div>
+
+            <div>
+                <h3>Ganga Aarti</h3>
+
+                <p>
+                    The evening Ganga Aarti is one of the city's
+                    best-known cultural and spiritual experiences,
+                    attracting residents and visitors to the riverfront.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="tradition">
+
+            <div class="tradition-icon">🎵</div>
+
+            <div>
+                <h3>Music & Performing Arts</h3>
+
+                <p>
+                    Music and performance traditions have played an
+                    important role in the cultural life of Varanasi,
+                    with classical and devotional forms continuing today.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="tradition">
+
+            <div class="tradition-icon">🧘</div>
+
+            <div>
+                <h3>Yoga & Spiritual Practices</h3>
+
+                <p>
+                    Varanasi's temples, riverfront and spiritual
+                    institutions provide an environment where yoga,
+                    meditation and devotional practices are part of
+                    cultural life.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="tradition">
+
+            <div class="tradition-icon">📚</div>
+
+            <div>
+                <h3>Literature & Learning</h3>
+
+                <p>
+                    Varanasi has a long association with Sanskrit
+                    learning, literature, philosophy and education.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="festivals" class="festival-section">
+
+    <p class="section-label">CELEBRATIONS</p>
+
+    <h2 style="color:#4b211f;">Festivals & Events</h2>
+
+    <div class="festival-grid">
+
+        <div class="festival">
+
+            <div class="festival-icon">🪔</div>
+
+            <h3>Dev Deepawali</h3>
+
+            <p>
+                A spectacular celebration associated with illuminated
+                ghats and devotional traditions.
+            </p>
+
+        </div>
+
+
+        <div class="festival">
+
+            <div class="festival-icon">🔱</div>
+
+            <h3>Maha Shivratri</h3>
+
+            <p>
+                A major festival dedicated to Lord Shiva and deeply
+                connected with the religious identity of Varanasi.
+            </p>
+
+        </div>
+
+
+        <div class="festival">
+
+            <div class="festival-icon">🌊</div>
+
+            <h3>Ganga Mahotsav</h3>
+
+            <p>
+                A cultural celebration highlighting music, arts,
+                traditions and the heritage of the Ganga.
+            </p>
+
+        </div>
+
+
+        <div class="festival">
+
+            <div class="festival-icon">🎭</div>
+
+            <h3>Ramleela</h3>
+
+            <p>
+                Traditional performances depicting episodes from
+                the Ramayana and associated cultural traditions.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="food" class="food-crafts">
+
+    <p class="section-label">TASTE & CRAFT</p>
+
+    <h2>Food & Local Crafts</h2>
+
+    <div class="food-grid">
+
+        <div class="food-card">
+
+            <div class="icon">🍲</div>
+
+            <h3>Banarasi Cuisine</h3>
+
+            <p>
+                Explore popular local foods, snacks, sweets and
+                traditional flavours associated with Varanasi.
+            </p>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <div class="icon">🍃</div>
+
+            <h3>Banarasi Paan</h3>
+
+            <p>
+                Paan is an iconic part of the local food culture and
+                is closely associated with the identity of Banaras.<br>
+                Banarasi Paan is very famous across the world. <br>
+
+            </p>
+
+        </div>
+
+
+        <div class="food-card">
+
+            <div class="icon">🧵</div>
+
+            <h3>Banarasi Silk</h3>
+
+            <p>
+                Banarasi silk weaving is one of the city's most famous
+                traditional crafts and contributes to its cultural identity.<br>
+                Banarasi Silk Saree is famous in all over world.<br>
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section id="gallery" class="gallery">
+
+    <p class="section-label">VISUAL HERITAGE</p>
+
+    <h2 style="color:#4b211f;">Digital Heritage Gallery</h2>
+
+    <div class="gallery-grid">
+
+        <img src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?auto=format&fit=crop&w=900&q=80">
+
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80">
+
+        <img src="https://images.unsplash.com/photo-1592639296346-560c37a0b0d0?auto=format&fit=crop&w=900&q=80">
+
+        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80">
+
+    </div>
+
+</section>
+
+
+
+
+<section id="stories" class="stories">
+
+    <p class="section-label">ORAL & CULTURAL HISTORY</p>
+
+    <h2 style="color:#4b211f;">Heritage Stories</h2>
+
+    <div class="story-box">
+
+        <h3>Stories That Connect Generations</h3>
+
+        <p>
+            Varanasi's heritage is preserved not only through monuments
+            but also through stories, traditions, rituals, music and
+            local knowledge. Streets, temples, ghats and neighbourhoods
+            are connected with memories and narratives that continue
+            to shape the cultural identity of the city.
+        </p>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>Varanasi Heritage</h3>
+
+    <p>
+        Preserving and celebrating the cultural essence
+        of India's oldest living city.
+    </p>
+
+    <div class="copyright">
+        &copy; 2026 Varanasi Heritage Project. All rights reserved.
+    </div>
+
+</footer>
+
+
+</body>
+</html>

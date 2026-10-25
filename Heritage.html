@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Heritage Explorer | Varanasi</title>
+
+    <link rel="stylesheet" href="Heritage.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="hero">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="back-home">
+                ← Back to Home
+            </a>
+
+            <h2>Varanasi</h2>
+
+        </nav>
+
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                HERITAGE EXPLORER
+            </p>
+
+            <h1>
+                Discover the Heritage of Varanasi
+            </h1>
+
+            <p>
+                Explore the temples, sacred ghats and historic
+                places that tell the story of one of India's
+                oldest living cities.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= INTRODUCTION ================= -->
+
+    <section class="intro">
+
+        <p class="section-label">
+            EXPLORE VARANASI
+        </p>
+
+        <h2>
+            A City Where History Lives
+        </h2>
+
+        <p>
+            Varanasi's heritage is deeply connected with its
+            temples, riverfront ghats, ancient traditions and
+            historic landmarks. Explore some of the city's
+            most significant heritage destinations below.
+        </p>
+
+    </section>
+
+
+    <!-- ================= CATEGORY FILTER ================= -->
+
+    <section class="categories">
+
+        <button
+            class="category-btn active"
+            onclick="filterPlaces('all', this)">
+            All
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterPlaces('religious', this)">
+            🛕 Temples & Religious Heritage
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterPlaces('ghat', this)">
+            🌊 Ghats
+        </button>
+
+        <button
+            class="category-btn"
+            onclick="filterPlaces('historic', this)">
+            🏛️ Historic Places
+        </button>
+
+    </section>
+
+
+    <!-- ================= HERITAGE CARDS ================= -->
+
+    <main class="heritage-grid">
+
+
+        <!-- KASHI VISHWANATH -->
+
+        <article class="heritage-card religious">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Kashi_Vishwanath.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+                alt="Kashi Vishwanath Temple">
+
+            <div class="card-content">
+
+                <span class="tag">
+                    Temples & Religious Heritage
+                </span>
+
+                <h3>
+                    Kashi Vishwanath Temple
+                </h3>
+
+                <p class="location">
+                    📍 Varanasi, Uttar Pradesh
+                </p>
+
+                <p>
+                    One of the most revered temples in Varanasi,
+                    dedicated to Lord Shiva and an important
+                    pilgrimage destination.
+                </p>
+
+                <button
+                    onclick="showDetails('kashi')"
+                    class="explore-btn">
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- SANKAT MOCHAN -->
+
+        <article class="heritage-card religious">
+
+            <img
+                src="https://kashibanaras.com/wp-content/uploads/2024/08/hanuman.webp"
+                alt="Sankat Mochan Hanuman Temple">
+
+            <div class="card-content">
+
+                <span class="tag">
+                    Temples & Religious Heritage
+                </span>
+
+                <h3>
+                    Sankat Mochan Hanuman Temple
+                </h3>
+
+                <p class="location">
+                    📍 Varanasi, Uttar Pradesh
+                </p>
+
+                <p>
+                    A famous temple dedicated to Lord Hanuman,
+                    known for its spiritual and cultural importance.
+                </p>
+
+                <button
+                    onclick="showDetails('sankat')"
+                    class="explore-btn">
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- DURGA TEMPLE -->
+
+        <article class="heritage-card religious">
+
+            <img
+                src="https://assets.indiaonline.in/cg/varanasi/City-Guide/durgatemple3.jpg"
+                alt="Durga Temple Varanasi">
+
+            <div class="card-content">
+
+                <span class="tag">
+                    Temples & Religious Heritage
+                </span>
+
+                <h3>
+                    Durga Temple
+                </h3>
+
+                <p class="location">
+                    📍 Varanasi, Uttar Pradesh
+                </p>
+
+                <p>
+                    A historic temple known for its distinctive
+                    architecture and religious significance.
+                </p>
+
+                <button
+                    onclick="showDetails('durga')"
+                    class="explore-btn">
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- DASHASHWAMEDH GHAT -->
+
+        <article class="heritage-card ghat">
+
+            <img
+                src="https://www.trawell.in/admin/images/upload/090544471Dashaawamedh_Ghat_Main.jpg"
+                alt="Dashashwamedh Ghat">
+
+            <div class="card-content">
+
+                <span class="tag">
+                    Ghats
+                </span>
+
+                <h3>
+                    Dashashwamedh Ghat
+                </h3>
+
+                <p class="location">
+                    📍 Ganges River, Varanasi
+                </p>
+
+                <p>
+                    One of the most famous ghats of Varanasi,
+                    particularly known for the evening Ganga Aarti.
+                </p>
+
+                <button
+                    onclick="showDetails('dashashwamedh')"
+                    class="explore-btn">
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- ASSI GHAT -->
+
+        <article class="heritage-card ghat">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Assi_Ghat_Varanasi_morning_Aarti.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original"
+                alt="Assi Ghat">
+
+            <div class="card-content">
+
+                <span class="tag">
+                    Ghats
+                </span>
+
+                <h3>
+                    Assi Ghat
+                </h3>
+
+                <p class="location">
+                    📍 Southern Varanasi
+                </p>
+
+                <p>
+                    A popular riverside destination where visitors
+                    can experience the cultural life of Varanasi.
+                </p>
+
+                <button
+                    onclick="showDetails('assi')"
+                    class="explore-btn">
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- MANIKARNIKA GHAT -->
+
+        <article class="heritage-card ghat">
+
+            <img
+                src="https://i0.wp.com/stampedmoments.com/wp-content/uploads/2023/12/manikarnika-ghat-varanasi.jpg?fit=1024%2C768&ssl=1"
+                alt="Manikarnika Ghat">
+
+            <div class="card-content">
+
+                <span class="tag">
+                    Ghats
+                </span>
+
+                <h3>
+                    Manikarnika Ghat
+                </h3>
+
+                <p class="location">
+                    📍 Varanasi, Uttar Pradesh
+                </p>
+
+                <p>
+                    One of Varanasi's most significant sacred
+                    ghats, deeply connected with Hindu traditions.
+                </p>
+
+                <button
+                    onclick="showDetails('manikarnika')"
+                    class="explore-btn">
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- SARNATH -->
+
+        <article class="heritage-card historic">
+
+            <img
+                src="https://kashiyatra.in/wp-content/uploads/2023/04/sarnath-stoop.jpg"
+                alt="Sarnath">
+
+            <div class="card-content">
+
+                <span class="tag">
+                    Historic Places
+                </span>
+
+                <h3>
+                    Sarnath
+                </h3>
+
+                <p class="location">
+                    📍 Near Varanasi
+                </p>
+
+                <p>
+                    An important Buddhist heritage site associated
+                    with the Buddha's first sermon.
+                </p>
+
+                <button
+                    onclick="showDetails('sarnath')"
+                    class="explore-btn">
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- RAMNAGAR FORT -->
+
+        <article class="heritage-card historic">
+
+            <img
+                src="https://kashiyatra.in/wp-content/uploads/2024/04/ramnagar-fort-varanasi.jpg"
+                alt="Ramnagar Fort">
+
+            <div class="card-content">
+
+                <span class="tag">
+                    Historic Places
+                </span>
+
+                <h3>
+                    Ramnagar Fort
+                </h3>
+
+                <p class="location">
+                    📍 Ramnagar, Varanasi
+                </p>
+
+                <p>
+                    A historic fort on the banks of the Ganges,
+                    reflecting the region's royal heritage.
+                </p>
+
+                <button
+                    onclick="showDetails('ramnagar')"
+                    class="explore-btn">
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+
+        <!-- DHA MEK STUPA -->
+
+        <article class="heritage-card historic">
+
+            <img
+                src="https://www.cdn.travejar.com/storage/india_attraction_tour_image/16800951520.webp"
+                alt="Dhamek Stupa">
+
+            <div class="card-content">
+
+                <span class="tag">
+                    Historic Places
+                </span>
+
+                <h3>
+                    Dhamek Stupa
+                </h3>
+
+                <p class="location">
+                    📍 Sarnath
+                </p>
+
+                <p>
+                    A major Buddhist monument at Sarnath,
+                    representing the area's rich historical heritage.
+                </p>
+
+                <button
+                    onclick="showDetails('dhamek')"
+                    class="explore-btn">
+                    Explore →
+                </button>
+
+            </div>
+
+        </article>
+
+    </main>
+
+
+    <!-- ================= DETAILS POPUP ================= -->
+
+    <div class="modal" id="detailsModal">
+
+        <div class="modal-content">
+
+            <button
+                class="close-btn"
+                onclick="closeDetails()">
+                ×
+            </button>
+
+            <span
+                class="modal-tag"
+                id="detailCategory">
+            </span>
+
+            <h2 id="detailTitle"></h2>
+
+            <p
+                class="modal-location"
+                id="detailLocation">
+            </p>
+
+
+            <h4>
+                History
+            </h4>
+
+            <p id="detailHistory"></p>
+
+
+            <h4>
+                Cultural Significance
+            </h4>
+
+            <p id="detailSignificance"></p>
+
+
+            <h4>
+                Visitor Information
+            </h4>
+
+            <p id="detailTips"></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="Heritage.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,593 @@
+/* ================================
+   RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    
+    background-color: #f5efe6;
+    font-family: Arial, sans-serif;
+}
+
+
+h1 {
+    color: #8b4513;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+}
+
+
+
+
+/* ================================
+   NAVIGATION
+================================ */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    padding: 18px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(67, 29, 27, 0.97);
+
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+}
+
+.logo {
+    color: white;
+
+    font-size: 24px;
+
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+
+    list-style: none;
+
+    gap: 18px;
+}
+
+.nav-links a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #f2c14e;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero {
+
+    min-height: 680px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0, 0, 0, 0.58),
+            rgba(0, 0, 0, 0.58)
+        ),
+
+        url("https://images.unsplash.com/photo-1561361058-c24cecae35ca?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+}
+
+.hero-content {
+    width: 90%;
+
+    max-width: 950px;
+
+    padding: 30px;
+}
+
+.subtitle {
+    color: #f2c14e;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 58px;
+
+    line-height: 1.15;
+
+    margin-bottom: 25px;
+
+    text-shadow: 2px 3px 8px #000;
+}
+
+.hero-content > p:not(.subtitle) {
+    font-size: 20px;
+
+    margin-bottom: 35px;
+
+    text-shadow: 1px 2px 5px #000;
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+.button {
+    display: inline-block;
+
+    padding: 14px 30px;
+
+    background: #d88925;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #b76813;
+
+    transform: translateY(-3px);
+}
+
+
+/* ================================
+   ABOUT
+================================ */
+
+.about {
+
+    padding: 90px 10%;
+
+    text-align: center;
+
+    background:
+
+        linear-gradient(
+            rgba(247, 241, 227, 0.92),
+            rgba(247, 241, 227, 0.92)
+        ),
+
+        url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+.section-label {
+
+    color: #c47420;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 10px;
+}
+
+.about h2,
+.section h2 {
+
+    color: #4b211f;
+
+    font-size: 40px;
+
+    margin-bottom: 25px;
+}
+
+.description {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    color: #555;
+
+    font-size: 17px;
+}
+
+
+/* ================================
+   GENERAL SECTION
+================================ */
+
+.section {
+
+    padding: 85px 7%;
+
+    text-align: center;
+
+    background: #fff;
+}
+
+.alternate {
+
+    background:
+
+        linear-gradient(
+            rgba(244, 235, 216, 0.95),
+            rgba(244, 235, 216, 0.95)
+        ),
+
+        url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80");
+
+    background-size: cover;
+
+    background-position: center;
+}
+
+
+/* ================================
+   CARDS
+================================ */
+
+.cards {
+
+    max-width: 1200px;
+
+    margin: 40px auto 0;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.card {
+
+    padding: 35px 25px;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e5e5;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.10);
+
+    transition: 0.3s;
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.18);
+}
+
+.icon {
+
+    font-size: 48px;
+
+    margin-bottom: 15px;
+}
+
+.card h3 {
+
+    color: #4b211f;
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+.card p {
+
+    color: #666;
+
+    margin-bottom: 20px;
+}
+
+.card button {
+
+    border: none;
+
+    background: #d88925;
+
+    color: white;
+
+    padding: 10px 18px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+.card button:hover {
+
+    background: #a96116;
+}
+
+
+/* ================================
+   TOURISM
+================================ */
+
+.tourism {
+
+    min-height: 500px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+
+        linear-gradient(
+            rgba(0, 0, 0, 0.60),
+            rgba(0, 0, 0, 0.60)
+        ),
+
+        url("https://images.unsplash.com/photo-1592639296346-560c37a0b0d0?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-attachment: fixed;
+}
+
+.tourism-content {
+
+    max-width: 800px;
+
+    padding: 40px;
+}
+
+.tourism h2 {
+
+    font-size: 45px;
+
+    margin-bottom: 20px;
+}
+
+.tourism-content > p:not(.section-label) {
+
+    font-size: 18px;
+
+    margin-bottom: 30px;
+}
+
+.tourism .section-label {
+
+    color: #f2c14e;
+}
+
+.tourism-buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.tourism-buttons button {
+
+    padding: 12px 20px;
+
+    border: 2px solid white;
+
+    background: transparent;
+
+    color: white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.tourism-buttons button:hover {
+
+    background: white;
+
+    color: #4b211f;
+}
+
+
+/* ================================
+   FOOTER
+================================ */
+
+footer {
+
+    background: #321615;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px 20px;
+}
+
+footer h3 {
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+footer p {
+
+    color: #ddd;
+}
+
+.copyright {
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #604846;
+
+    font-size: 14px;
+}
+
+
+/* ================================
+   TABLET
+================================ */
+
+@media (max-width: 1000px) {
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .nav-links {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .cards {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .hero h1 {
+
+        font-size: 46px;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .nav-links {
+
+        gap: 10px;
+    }
+
+    .nav-links a {
+
+        font-size: 12px;
+    }
+
+    .hero {
+
+        min-height: 600px;
+
+        background-attachment: scroll;
+    }
+
+    .hero h1 {
+
+        font-size: 35px;
+    }
+
+    .hero-content > p:not(.subtitle) {
+
+        font-size: 16px;
+    }
+
+    .about h2,
+    .section h2 {
+
+        font-size: 30px;
+    }
+
+    .cards {
+
+        grid-template-columns: 1fr;
+    }
+
+    .tourism {
+
+        background-attachment: scroll;
+    }
+
+    .tourism h2 {
+
+        font-size: 34px;
+    }
+}

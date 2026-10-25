@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Your Varanasi Trip | OneScan Varanasi</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f1e8;
+            color: #3d241c;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+            background: #4d2220;
+            color: white;
+            padding: 18px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .home-link {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            background: #4d2220;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 17px;
+        }
+
+        .highlight {
+            color: #f5a623;
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* =========================
+           SUMMARY
+        ========================= */
+
+        .summary {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .summary h2 {
+            color: #4d2220;
+            margin-bottom: 20px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .summary-item {
+            background: #f8f1e6;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .summary-item strong {
+            display: block;
+            color: #8a5418;
+            margin-top: 6px;
+        }
+
+        /* =========================
+           PACKAGE
+        ========================= */
+
+        .package-title {
+            text-align: center;
+            margin: 35px 0 20px;
+            color: #4d2220;
+        }
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .package-card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+        }
+
+        .package-card h3 {
+            color: #4d2220;
+            margin-bottom: 15px;
+            font-size: 21px;
+        }
+
+        .package-card ul {
+            list-style: none;
+        }
+
+        .package-card li {
+            padding: 9px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .package-card li:last-child {
+            border-bottom: none;
+        }
+
+        /* =========================
+           COST
+        ========================= */
+
+        .cost-card {
+            margin-top: 30px;
+            background: #4d2220;
+            color: white;
+            padding: 30px;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .cost-card h2 {
+            margin-bottom: 10px;
+        }
+
+        .cost {
+            font-size: 38px;
+            color: #f5a623;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .budget-status {
+            font-size: 15px;
+        }
+
+        /* =========================
+           CONFIRM BUTTON
+        ========================= */
+
+        .confirm-btn {
+            display: block;
+            width: 100%;
+            margin-top: 25px;
+            padding: 16px;
+            background: #d88918;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .confirm-btn:hover {
+            background: #b86f0d;
+        }
+
+        .edit-btn {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #7a4b19;
+            text-decoration: none;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            .summary-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🛕 OneScan Varanasi
+        </div>
+
+        <a href="index.html" class="home-link">
+            ← Home
+        </a>
+
+    </nav>
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="hero">
+
+        <h1>
+            Your <span class="highlight">Varanasi Experience</span>
+        </h1>
+
+        <p>
+            We've created a complete trip package based on your choices.
+        </p>
+
+    </section>
+
+
+    <main class="container">
+
+
+        <!-- =========================
+             TRIP SUMMARY
+        ========================= -->
+
+        <section class="summary">
+
+            <h2>📋 Your Trip Details</h2>
+
+            <div class="summary-grid">
+
+                <div class="summary-item">
+                    💰 Budget
+                    <strong id="budget">--</strong>
+                </div>
+
+                <div class="summary-item">
+                    📅 Duration
+                    <strong id="days">--</strong>
+                </div>
+
+                <div class="summary-item">
+                    👥 Travellers
+                    <strong id="people">--</strong>
+                </div>
+
+                <div class="summary-item">
+                    ✈️ Style
+                    <strong id="style">--</strong>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PACKAGE
+        ========================= -->
+
+        <h2 class="package-title">
+            🎒 Your Complete Travel Package
+        </h2>
+
+
+        <section class="package-grid">
+
+
+            <!-- HOTEL -->
+
+            <div class="package-card">
+
+                <h3>🏨 Accommodation</h3>
+
+                <ul>
+
+                    <li>✓ Heritage-friendly hotel</li>
+
+                    <li>✓ Comfortable room</li>
+
+                    <li>✓ Breakfast included</li>
+
+                    <li>✓ Central Varanasi location</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- TRANSPORT -->
+
+            <div class="package-card">
+
+                <h3>🚕 Transportation</h3>
+
+                <ul>
+
+                    <li>✓ Airport/Railway Station pickup</li>
+
+                    <li>✓ Local cab/auto assistance</li>
+
+                    <li>✓ Daily sightseeing transport</li>
+
+                    <li>✓ Return transfer</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- TEMPLES -->
+
+            <div class="package-card">
+
+                <h3>🛕 Heritage & Temples</h3>
+
+                <ul>
+
+                    <li>✓ Kashi Vishwanath Temple</li>
+
+                    <li>✓ Sankat Mochan Temple</li>
+
+                    <li>✓ Historic heritage sites</li>
+
+                    <li>✓ Guided heritage experience</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- GHATS -->
+
+            <div class="package-card">
+
+                <h3>🌊 Ghats & Experiences</h3>
+
+                <ul>
+
+                    <li>✓ Ganga Ghat visit</li>
+
+                    <li>✓ Ganga boat ride</li>
+
+                    <li>✓ Evening Ganga Aarti</li>
+
+                    <li>✓ Sunrise/Sunset experience</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- FOOD -->
+
+            <div class="package-card">
+
+                <h3>🍛 Food & Local Culture</h3>
+
+                <ul>
+
+                    <li>✓ Traditional Varanasi cuisine</li>
+
+                    <li>✓ Local food experience</li>
+
+                    <li>✓ Street food suggestions</li>
+
+                    <li>✓ Famous local sweets</li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- SHOPPING -->
+
+            <div class="package-card">
+
+                <h3>🛍️ Shopping & Crafts</h3>
+
+                <ul>
+
+                    <li>✓ Banarasi silk experience</li>
+
+                    <li>✓ Local handicrafts</li>
+
+                    <li>✓ Souvenir recommendations</li>
+
+                    <li>✓ Local market visit</li>
+
+                </ul>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================
+             COST
+        ========================= -->
+
+        <section class="cost-card">
+
+            <h2>💰 Estimated Trip Cost</h2>
+
+            <div class="cost" id="tripCost">
+                ₹0
+            </div>
+
+            <p class="budget-status" id="budgetStatus">
+                Calculating your package...
+            </p>
+
+
+            <button
+                class="confirm-btn"
+                onclick="confirmTrip()"
+            >
+                ✅ Confirm My Trip & Generate QR
+            </button>
+
+
+            <a
+                href="plan.html"
+                class="edit-btn"
+            >
+                ← Change my trip preferences
+            </a>
+
+        </section>
+
+
+    </main>
+
+
+    <script>
+
+        /* =========================
+           GET TRIP DATA
+        ========================= */
+
+        const tripData =
+            JSON.parse(
+                localStorage.getItem("varanasiTrip")
+            );
+
+
+        if (!tripData) {
+
+            alert(
+                "No trip details found. Please plan your trip first."
+            );
+
+            window.location.href = "plan.html";
+
+        }
+
+
+        /* =========================
+           DISPLAY DETAILS
+        ========================= */
+
+        const budget =
+            Number(tripData.budget);
+
+        const days =
+            Number(tripData.days);
+
+        const people =
+            Number(tripData.people);
+
+
+        document.getElementById("budget").textContent =
+            "₹" + budget.toLocaleString("en-IN");
+
+
+        document.getElementById("days").textContent =
+            days + (days === 1 ? " Day" : " Days");
+
+
+        document.getElementById("people").textContent =
+            people;
+
+
+        document.getElementById("style").textContent =
+            tripData.style.charAt(0).toUpperCase()
+            + tripData.style.slice(1);
+
+
+        /* =========================
+           CALCULATE COST
+        ========================= */
+
+        let estimatedCost;
+
+
+        if (tripData.style === "budget") {
+
+            estimatedCost =
+                budget * 0.82;
+
+        }
+
+        else if (tripData.style === "premium") {
+
+            estimatedCost =
+                budget * 0.96;
+
+        }
+
+        else {
+
+            estimatedCost =
+                budget * 0.90;
+
+        }
+
+
+        /* Keep cost realistic */
+
+        estimatedCost =
+            Math.round(estimatedCost / 50) * 50;
+
+
+        document.getElementById("tripCost").textContent =
+            "₹" + estimatedCost.toLocaleString("en-IN");
+
+
+        document.getElementById("budgetStatus").textContent =
+            "Estimated package for "
+            + people
+            + " traveller(s) • "
+            + days
+            + " day(s)";
+
+
+        /* =========================
+           CONFIRM TRIP
+        ========================= */
+
+        function confirmTrip() {
+
+            const tripId =
+                "VS"
+                + new Date().getFullYear()
+                + "-"
+                + Math.floor(
+                    1000 + Math.random() * 9000
+                );
+
+
+            const confirmedTrip = {
+
+                ...tripData,
+
+                estimatedCost:
+                    estimatedCost,
+
+                tripId:
+                    tripId,
+
+                status:
+                    "Confirmed"
+
+            };
+
+
+            localStorage.setItem(
+                "confirmedTrip",
+                JSON.stringify(confirmedTrip)
+            );
+
+
+            window.location.href =
+                "qr-pass.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

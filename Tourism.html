@@ -1,0 +1,3398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Varanasi Heritage | Digital Heritage of India</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background-color: #f5efe6;
+            font-family: Arial, sans-serif;
+            color: #444;
+        }
+
+        p {
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+
+        .navbar {
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            width: 100%;
+
+            padding: 12px 5%;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            background: rgba(67, 29, 27, 0.98);
+
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.25);
+        }
+
+
+        .logo {
+
+            color: white;
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            white-space: nowrap;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            list-style: none;
+
+            gap: 8px;
+
+            align-items: center;
+        }
+
+
+        .nav-item {
+
+            position: relative;
+        }
+
+
+        .nav-links a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            padding: 10px 12px;
+
+            display: block;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: #f2c14e;
+        }
+
+
+        .dropdown-menu {
+
+            display: none;
+
+            position: absolute;
+
+            top: 100%;
+            left: 0;
+
+            background-color: #431d1b;
+
+            min-width: 230px;
+
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+
+            border-radius: 5px;
+
+            list-style: none;
+
+            padding: 8px 0;
+
+            z-index: 1001;
+        }
+
+
+        .dropdown-menu li a {
+
+            padding: 10px 16px;
+
+            font-size: 13px;
+
+            font-weight: normal;
+
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+
+        .dropdown-menu li a:hover {
+
+            background-color: #5a2825;
+
+            color: #f2c14e;
+        }
+
+
+        .nav-item:hover .dropdown-menu {
+
+            display: block;
+        }
+
+
+        .nav-utils {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+
+        .search-btn,
+        .admin-btn {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            background: #d88925;
+
+            padding: 7px 14px;
+
+            border-radius: 4px;
+
+            transition: 0.3s;
+        }
+
+
+        .search-btn:hover {
+
+            background: #b76813;
+        }
+
+
+        .admin-btn {
+
+            background: transparent;
+
+            border: 1px solid #d88925;
+
+            color: #d88925;
+        }
+
+
+        .admin-btn:hover {
+
+            background: #d88925;
+
+            color: white;
+        }
+
+
+        .hero {
+
+            min-height: 680px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            background-image:
+
+                linear-gradient(
+                    rgba(0,0,0,0.58),
+                    rgba(0,0,0,0.58)
+                ),
+
+                url("https://images.unsplash.com/photo-1561361058-c24cecae35ca?auto=format&fit=crop&w=2000&q=85");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+        }
+
+
+        .hero-content {
+
+            width: 90%;
+
+            max-width: 950px;
+
+            padding: 30px;
+        }
+
+
+        .subtitle {
+
+            color: #f2c14e;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+
+            color: white;
+
+            font-size: 58px;
+
+            line-height: 1.15;
+
+            margin-bottom: 25px;
+
+            text-shadow: 2px 3px 8px #000;
+        }
+
+
+        .hero-content > p:not(.subtitle) {
+
+            font-size: 20px;
+
+            margin-bottom: 35px;
+
+            text-shadow: 1px 2px 5px #000;
+        }
+
+
+        .button {
+
+            display: inline-block;
+
+            padding: 14px 30px;
+
+            background: #d88925;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 6px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .button:hover {
+
+            background: #b76813;
+
+            transform: translateY(-3px);
+        }
+
+
+        .about {
+
+            padding: 90px 10%;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    rgba(247,241,227,0.92),
+                    rgba(247,241,227,0.92)
+                ),
+
+                url("https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        .section-label {
+
+            color: #c47420;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .about h2,
+        .section h2 {
+
+            color: #4b211f;
+
+            font-size: 40px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .description {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            color: #555;
+        }
+
+
+        .section {
+
+            padding: 85px 7%;
+
+            text-align: center;
+
+            background: #fff;
+        }
+
+
+        .alternate {
+
+            background:
+
+                linear-gradient(
+                    rgba(244,235,216,0.95),
+                    rgba(244,235,216,0.95)
+                ),
+
+                url("https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+
+            background-position: center;
+        }
+
+
+        .cards {
+
+            max-width: 1200px;
+
+            margin: 40px auto 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .card {
+
+            padding: 35px 25px;
+
+            background: rgba(255,255,255,0.96);
+
+            border-radius: 12px;
+
+            border: 1px solid #e5e5e5;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+
+            transition: 0.3s;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+        }
+
+
+        .icon {
+
+            font-size: 48px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .card h3 {
+
+            color: #4b211f;
+
+            font-size: 23px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .card p {
+
+            color: #666;
+
+            margin-bottom: 20px;
+
+            font-size: 15px;
+        }
+
+
+        .card button {
+
+            border: none;
+
+            background: #d88925;
+
+            color: white;
+
+            padding: 10px 18px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .card button:hover {
+
+            background: #a96116;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           CONTENT CARDS
+        ========================= */
+
+        .content-grid {
+
+            max-width: 1200px;
+
+            margin: 40px auto 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 25px;
+        }
+
+
+        .content-card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+
+            text-align: left;
+
+            transition: 0.3s;
+        }
+
+
+        .content-card:hover {
+
+            transform: translateY(-6px);
+
+            box-shadow: 0 12px 28px rgba(0,0,0,0.16);
+        }
+
+
+        .content-card h3 {
+
+            color: #4b211f;
+
+            margin-bottom: 12px;
+
+            font-size: 22px;
+        }
+
+
+        .content-card p {
+
+            color: #666;
+
+            font-size: 15px;
+        }
+
+
+        .tourism-hero {
+
+            min-height: 550px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+
+                linear-gradient(
+                    rgba(0,0,0,0.60),
+                    rgba(0,0,0,0.60)
+                ),
+
+                url("https://images.unsplash.com/photo-1592639296346-560c37a0b0d0?auto=format&fit=crop&w=1800&q=85");
+
+            background-size: cover;
+
+            background-position: center;
+
+            background-attachment: fixed;
+        }
+
+
+        .tourism-hero .hero-content {
+
+            max-width: 900px;
+        }
+
+
+        .tourism-hero h2 {
+
+            color: white;
+
+            font-size: 52px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .tourism-hero p {
+
+            font-size: 19px;
+
+            margin-bottom: 30px;
+
+            text-shadow: 1px 2px 5px black;
+        }
+
+
+        .tourist-places {
+
+            padding: 85px 7%;
+
+            background: #fff;
+
+            text-align: center;
+        }
+
+
+        .place-container {
+
+            max-width: 1200px;
+
+            margin: 40px auto 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 25px;
+        }
+
+
+        .place-card {
+
+            background: #fff;
+
+            border-radius: 12px;
+
+            overflow: hidden;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+
+            transition: 0.3s;
+
+            text-align: left;
+        }
+
+
+        .place-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: 0 12px 30px rgba(0,0,0,0.20);
+        }
+
+
+        .place-card img {
+
+            width: 100%;
+
+            height: 220px;
+
+            object-fit: cover;
+        }
+
+
+        .place-card-content {
+
+            padding: 25px;
+        }
+
+
+        .place-card h3 {
+
+            color: #4b211f;
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .place-card p {
+
+            color: #666;
+
+            font-size: 15px;
+        }
+
+
+        .best-time {
+
+            padding: 85px 7%;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    rgba(244,235,216,0.95),
+                    rgba(244,235,216,0.95)
+                );
+        }
+
+
+        .time-container {
+
+            max-width: 1100px;
+
+            margin: 40px auto 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 25px;
+        }
+
+
+        .time-card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+
+            transition: 0.3s;
+        }
+
+
+        .time-card:hover {
+
+            transform: translateY(-6px);
+        }
+
+
+        .time-card h3 {
+
+            color: #4b211f;
+
+            margin-bottom: 15px;
+
+            font-size: 21px;
+        }
+
+
+        .time-card p {
+
+            color: #666;
+
+            font-size: 15px;
+        }
+
+
+        .experiences {
+
+            padding: 85px 7%;
+
+            background: #fff;
+
+            text-align: center;
+        }
+
+
+        .experience-container {
+
+            max-width: 1100px;
+
+            margin: 40px auto 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(4,1fr);
+
+            gap: 20px;
+        }
+
+
+        .experience-card {
+
+            padding: 30px 20px;
+
+            background: #f9f4ec;
+
+            border-radius: 12px;
+
+            border: 1px solid #eadbc7;
+
+            transition: 0.3s;
+        }
+
+
+        .experience-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+
+        .experience-card span {
+
+            font-size: 45px;
+
+            display: block;
+
+            margin-bottom: 15px;
+        }
+
+
+        .experience-card h3 {
+
+            margin-bottom: 12px;
+
+            font-size: 21px;
+        }
+
+
+        .experience-card p {
+
+            font-size: 14px;
+
+            color: #666;
+        }
+
+
+        .tour-plan {
+
+            padding: 85px 7%;
+
+            text-align: center;
+
+            background:
+
+                linear-gradient(
+                    rgba(244,235,216,0.95),
+                    rgba(244,235,216,0.95)
+                );
+        }
+
+
+        .plan-container {
+
+            max-width: 1000px;
+
+            margin: 40px auto 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(2,1fr);
+
+            gap: 30px;
+        }
+
+
+        .plan-card {
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+
+            text-align: left;
+        }
+
+
+        .plan-card h3 {
+
+            color: #c47420;
+
+            margin-bottom: 20px;
+
+            font-size: 25px;
+        }
+
+
+        .plan-card ul {
+
+            padding-left: 22px;
+        }
+
+
+        .plan-card li {
+
+            margin-bottom: 12px;
+
+            color: #555;
+        }
+
+
+        .travel-tips {
+
+            padding: 85px 7%;
+
+            background: #fff;
+
+            text-align: center;
+        }
+
+
+        .tips-list {
+
+            max-width: 850px;
+
+            margin: 40px auto 0;
+
+            background: #f9f4ec;
+
+            padding: 30px 45px;
+
+            border-radius: 12px;
+
+            text-align: left;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+        }
+
+
+        .tips-list li {
+
+            list-style: none;
+
+            margin: 15px 0;
+
+            font-size: 16px;
+
+            color: #555;
+        }
+
+
+        .tour-info {
+
+            padding: 85px 7%;
+
+            text-align: center;
+
+            background: #f5efe6;
+        }
+
+
+        .tour-info-grid {
+
+            max-width: 1100px;
+
+            margin: 40px auto 0;
+
+            display: grid;
+
+            grid-template-columns: repeat(3,1fr);
+
+            gap: 25px;
+        }
+
+
+        .tour-info-card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+        }
+
+
+        .tour-info-card h3 {
+
+            margin-bottom: 15px;
+        }
+
+
+        .tour-info-card p {
+
+            font-size: 15px;
+
+            color: #666;
+        }
+
+
+        footer {
+
+            background: #321615;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 45px 20px 20px;
+        }
+
+
+        footer h3 {
+
+            color: white;
+
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+
+        footer p {
+
+            color: #ddd;
+        }
+
+
+        .copyright {
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top: 1px solid #604846;
+
+            font-size: 14px;
+        }
+
+
+        .top-button {
+
+            position: fixed;
+
+            bottom: 20px;
+
+            right: 20px;
+
+            width: 45px;
+
+            height: 45px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            background: #d88925;
+
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 50%;
+
+            font-size: 20px;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+
+            z-index: 999;
+        }
+
+
+        .top-button:hover {
+
+            background: #a96116;
+        }
+
+
+        @media (max-width: 1100px) {
+
+            .navbar {
+
+                flex-direction: column;
+
+                gap: 12px;
+            }
+
+
+            .nav-links {
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .cards,
+            .content-grid,
+            .place-container {
+
+                grid-template-columns: repeat(2,1fr);
+            }
+
+
+            .experience-container {
+
+                grid-template-columns: repeat(2,1fr);
+            }
+
+
+            .time-container,
+            .tour-info-grid {
+
+                grid-template-columns: repeat(2,1fr);
+            }
+
+        }
+
+
+        @media (max-width: 700px) {
+
+            .hero {
+
+                min-height: 600px;
+
+                background-attachment: scroll;
+            }
+
+
+            .hero h1 {
+
+                font-size: 38px;
+            }
+
+
+            .hero-content > p:not(.subtitle) {
+
+                font-size: 16px;
+            }
+
+
+            .about h2,
+            .section h2 {
+
+                font-size: 30px;
+            }
+
+
+            .cards,
+            .content-grid,
+            .place-container,
+            .experience-container,
+            .time-container,
+            .plan-container,
+            .tour-info-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .nav-links {
+
+                gap: 3px;
+            }
+
+
+            .nav-links a {
+
+                font-size: 11px;
+
+                padding: 7px;
+            }
+
+
+            .logo {
+
+                font-size: 19px;
+            }
+
+
+            .tourism-hero {
+
+                min-height: 550px;
+
+                background-attachment: scroll;
+            }
+
+
+            .tourism-hero h2 {
+
+                font-size: 36px;
+            }
+
+
+            .tourism-hero p {
+
+                font-size: 16px;
+            }
+
+
+            .tips-list {
+
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <nav class="navbar">
+
+
+        <div class="logo">
+
+            🛕 Varanasi Heritage
+
+        </div>
+
+
+        <ul class="nav-links">
+
+
+            <li class="nav-item">
+
+                <a href=index.html>
+                    Home
+                </a>
+
+            </li>
+
+
+            <!-- HERITAGE -->
+
+            <li class="nav-item">
+
+                <a href="#about">
+                    Heritage Explorer ▼
+                </a>
+
+
+                <ul class="dropdown-menu">
+
+
+                    <li>
+                        <a href="#temples">
+                            Temples & Religious Heritage
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#ghats">
+                            Ghats
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#historical">
+                            Historical Places
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#museums">
+                            Museums & Cultural Institutions
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </li>
+
+
+            <!-- CULTURE -->
+
+            <li class="nav-item">
+
+                <a href="#culture">
+                    Culture & Traditions ▼
+                </a>
+
+
+                <ul class="dropdown-menu">
+
+
+                    <li>
+                        <a href="#culture">
+                            Culture & Traditions
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#festivals">
+                            Festivals & Events
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#food">
+                            Food & Local Crafts
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#gallery">
+                            Digital Heritage Gallery
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#stories">
+                            Heritage Stories
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </li>
+
+
+            <li class="nav-item">
+
+                <a href="#tourism">
+                    Tourist Guide ▼
+                </a>
+
+
+                <ul class="dropdown-menu">
+
+
+                    <li>
+                        <a href="#map">
+                            Interactive Map
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#transport">
+                            Transportation
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="#tour-guide">
+                            Tourist Guide
+                        </a>
+                    </li>
+
+
+                </ul>
+
+            </li>
+
+
+
+               <!-- PLAN YOUR TRIP -->
+
+<li class="nav-item">
+
+    <a href="plan.html">
+        🧳 Plan Your Trip
+    </a>
+
+</li>
+
+
+                </ul>
+
+            </li>
+
+
+        </ul>
+
+
+        <div class="nav-utils">
+
+
+            <a href="#search" class="search-btn">
+
+                🔍 Search
+
+            </a>
+
+
+            <a href="#admin" class="admin-btn">
+
+                Admin
+
+            </a>
+
+
+        </div>
+
+
+    </nav>
+
+
+    <header id="home" class="hero">
+
+
+        <div class="hero-content">
+
+
+            <p class="subtitle">
+
+                DIGITAL HERITAGE OF INDIA
+
+            </p>
+
+
+            <h1>
+
+                Discover the Soul of Varanasi
+
+            </h1>
+
+
+            <p>
+
+                Explore the ancient heritage, sacred ghats,
+                temples, culture, traditions and tourism
+                of Varanasi.
+
+            </p>
+
+
+            <a href="#about" class="button">
+
+                Explore Varanasi
+
+            </a>
+
+
+        </div>
+
+
+    </header>
+
+
+    <section id="about" class="about">
+
+
+        <p class="section-label">
+
+            WELCOME TO VARANASI
+
+        </p>
+
+
+        <h2>
+
+            A City of Heritage & Culture
+
+        </h2>
+
+
+        <p class="description">
+
+            Varanasi is one of India's most culturally
+            significant cities. Situated on the banks of
+            the River Ganga, the city is known for its
+            historic ghats, temples, music, literature,
+            traditional crafts, festivals and spiritual
+            traditions. It is one of India's most important
+            cultural and spiritual destinations.
+
+        </p>
+
+
+    </section>
+
+
+    <section id="highlights" class="section alternate">
+
+
+        <p class="section-label">
+
+            HIGHLIGHTS
+
+        </p>
+
+
+        <h2>
+
+            Discover the City
+
+        </h2>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🏛️
+                </div>
+
+                <h3>
+                    Heritage
+                </h3>
+
+                <p>
+                    Discover historical monuments,
+                    ancient structures and heritage
+                    locations across the city.
+                </p>
+
+                <button onclick="location.href='#historical'">
+                    Learn More →
+                </button>
+
+            </div>
+
+
+            <!-- 2 -->
+
+            <div class="card">
+
+                <div class="icon">
+                    🌊
+                </div>
+
+                <h3>
+                    Sacred Ghats
+                </h3>
+
+                <p>
+                    Explore famous ghats along the
+                    River Ganga and experience their
+                    spiritual atmosphere.
+                </p>
+
+                <button onclick="location.href='#ghats'">
+                    Explore Ghats →
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">
+                    🛕
+                </div>
+
+                <h3>
+                    Temples & Religion
+                </h3>
+
+                <p>
+                    Visit spiritual landmarks including
+                    Kashi Vishwanath and other historic
+                    temples.
+                </p>
+
+                <button onclick="location.href='#temples'">
+                    View Temples →
+                </button>
+
+            </div>
+
+            <div class="card">
+
+                <div class="icon">
+                    🎭
+                </div>
+
+                <h3>
+                    Culture & Traditions
+                </h3>
+
+                <p>
+                    Learn about classical music,
+                    spiritual rituals, traditions
+                    and local lifestyle.
+                </p>
+
+                <button onclick="location.href='#culture'">
+                    Explore Culture →
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🪔
+                </div>
+
+                <h3>
+                    Festivals & Events
+                </h3>
+
+                <p>
+                    Experience grand celebrations
+                    and cultural events of Varanasi.
+                </p>
+
+                <button onclick="location.href='#festivals'">
+                    View Events →
+                </button>
+
+            </div>
+
+
+            
+
+            <div class="card">
+
+                <div class="icon">
+                    🍲
+                </div>
+
+                <h3>
+                    Food & Local Crafts
+                </h3>
+
+                <p>
+                    Taste local food and discover
+                    Banarasi silk and traditional crafts.
+                </p>
+
+                <button onclick="location.href='#food'">
+                    Discover Taste →
+                </button>
+
+            </div>
+
+
+            
+
+            <div class="card">
+
+                <div class="icon">
+                    🖼️
+                </div>
+
+                <h3>
+                    Museums & Gallery
+                </h3>
+
+                <p>
+                    Explore museums, cultural collections
+                    and digital heritage archives.
+                </p>
+
+                <button onclick="location.href='#museums'">
+                    Visit Gallery →
+                </button>
+
+            </div>
+
+
+            
+
+            <div class="card">
+
+                <div class="icon">
+                    🗺️
+                </div>
+
+                <h3>
+                    Interactive Map
+                </h3>
+
+                <p>
+                    Navigate through heritage locations
+                    and important tourist destinations.
+                </p>
+
+                <button onclick="location.href='#map'">
+                    Open Map →
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🛺
+                </div>
+
+                <h3>
+                    Transportation
+                </h3>
+
+                <p>
+                    Find information about local transport,
+                    boats and travel options.
+                </p>
+
+                <button onclick="location.href='#transport'">
+                    Check Routes →
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    📜
+                </div>
+
+                <h3>
+                    Heritage Stories
+                </h3>
+
+                <p>
+                    Read fascinating stories, folklore
+                    and historical traditions.
+                </p>
+
+                <button onclick="location.href='#stories'">
+                    Read Stories →
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🏗️
+                </div>
+
+                <h3>
+                    Smart Development
+                </h3>
+
+                <p>
+                    Learn about development and
+                    heritage preservation initiatives.
+                </p>
+
+                <button onclick="location.href='#development'">
+                    See Updates →
+                </button>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🧭
+                </div>
+
+                <h3>
+                    Tourist Guide
+                </h3>
+
+                <p>
+                    Get itineraries, travel tips,
+                    best time information and guidance.
+                </p>
+
+                <button onclick="location.href='#tour-guide'">
+                    Get Plan →
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section id="temples" class="section">
+
+
+        <p class="section-label">
+            SPIRITUAL HERITAGE
+        </p>
+
+
+        <h2>
+            Temples & Religious Heritage
+        </h2>
+
+
+        <div class="content-grid">
+
+
+            <div class="content-card">
+
+                <h3>
+                    🛕 Kashi Vishwanath Temple
+                </h3>
+
+                <p>
+                    One of the most important Hindu
+                    temples dedicated to Lord Shiva
+                    and a major pilgrimage destination.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🙏 Sankat Mochan Temple
+                </h3>
+
+                <p>
+                    A famous temple dedicated to
+                    Lord Hanuman and an important
+                    spiritual centre of Varanasi.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🌺 Durga Temple
+                </h3>
+
+                <p>
+                    A historic temple known for its
+                    distinctive architecture and
+                    religious significance.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section id="ghats" class="section alternate">
+
+
+        <p class="section-label">
+            ALONG THE GANGA
+        </p>
+
+
+        <h2>
+            Sacred Ghats
+        </h2>
+
+
+        <div class="content-grid">
+
+
+            <div class="content-card">
+
+                <h3>
+                    🌊 Dashashwamedh Ghat
+                </h3>
+
+                <p>
+                    One of the most famous ghats of
+                    Varanasi, especially known for
+                    its evening Ganga Aarti.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🌅 Assi Ghat
+                </h3>
+
+                <p>
+                    A popular ghat for sunrise,
+                    boat rides, cultural activities
+                    and peaceful riverside experiences.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🔥 Manikarnika Ghat
+                </h3>
+
+                <p>
+                    One of the oldest and most
+                    significant cremation ghats
+                    along the River Ganga.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section id="historical" class="section">
+
+
+        <p class="section-label">
+            HISTORY
+        </p>
+
+
+        <h2>
+            Historical Places
+        </h2>
+
+
+        <div class="content-grid">
+
+
+            <div class="content-card">
+
+                <h3>
+                    🏰 Ramnagar Fort
+                </h3>
+
+                <p>
+                    A historic fort situated near
+                    the Ganga and associated with
+                    the royal heritage of the region.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    ☸️ Sarnath
+                </h3>
+
+                <p>
+                    An important Buddhist heritage
+                    site associated with Buddha's
+                    first sermon.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🏛️ Historic Streets
+                </h3>
+
+                <p>
+                    Explore the narrow lanes,
+                    old buildings and historic
+                    neighbourhoods of Varanasi.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <section id="museums" class="section alternate">
+
+
+        <p class="section-label">
+            CULTURAL COLLECTIONS
+        </p>
+
+
+        <h2>
+            Museums & Cultural Institutions
+        </h2>
+
+
+        <div class="content-grid">
+
+
+            <div class="content-card">
+
+                <h3>
+                    🖼️ Bharat Kala Bhavan
+                </h3>
+
+                <p>
+                    A major cultural institution
+                    associated with art, archaeology
+                    and Indian cultural collections.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    📜 Heritage Archives
+                </h3>
+
+                <p>
+                    Digital archives can preserve
+                    photographs, documents, stories
+                    and historical information.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🎨 Art & Culture
+                </h3>
+
+                <p>
+                    Discover paintings, sculptures,
+                    manuscripts, textiles and
+                    traditional artistic traditions.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CULTURE
+    ====================================================== -->
+
+    <section id="culture" class="section">
+
+
+        <p class="section-label">
+            LIVING CULTURE
+        </p>
+
+
+        <h2>
+            Culture & Traditions
+        </h2>
+
+
+        <div class="content-grid">
+
+
+            <div class="content-card">
+
+                <h3>
+                    🎵 Classical Music
+                </h3>
+
+                <p>
+                    Varanasi has a strong association
+                    with Indian classical music and
+                    traditional musical practices.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🪔 Spiritual Traditions
+                </h3>
+
+                <p>
+                    Daily rituals, prayers and ceremonies
+                    along the Ganga form an important
+                    part of the city's living heritage.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🎨 Traditional Arts
+                </h3>
+
+                <p>
+                    Local crafts, textiles, weaving
+                    and artistic traditions continue
+                    to shape Varanasi's culture.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FESTIVALS
+    ====================================================== -->
+
+    <section id="festivals" class="section alternate">
+
+
+        <p class="section-label">
+            CELEBRATIONS
+        </p>
+
+
+        <h2>
+            Festivals & Events
+        </h2>
+
+
+        <div class="content-grid">
+
+
+            <div class="content-card">
+
+                <h3>
+                    🪔 Dev Deepawali
+                </h3>
+
+                <p>
+                    The ghats are illuminated with
+                    thousands of lamps, creating a
+                    spectacular cultural atmosphere.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🔱 Maha Shivratri
+                </h3>
+
+                <p>
+                    A major religious festival with
+                    temple visits, prayers and
+                    cultural celebrations.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🌊 Ganga Aarti
+                </h3>
+
+                <p>
+                    The evening river ceremony is
+                    one of the most memorable
+                    experiences for visitors.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOD
+    ====================================================== -->
+
+    <section id="food" class="section">
+
+
+        <p class="section-label">
+            TASTE OF BANARAS
+        </p>
+
+
+        <h2>
+            Food & Local Crafts
+        </h2>
+
+
+        <div class="content-grid">
+
+
+            <div class="content-card">
+
+                <h3>
+                    🍛 Kachori-Sabzi
+                </h3>
+
+                <p>
+                    A popular local breakfast enjoyed
+                    throughout Varanasi.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🥤 Banarasi Lassi
+                </h3>
+
+                <p>
+                    A refreshing traditional drink
+                    enjoyed by locals and visitors.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🧵 Banarasi Silk
+                </h3>
+
+                <p>
+                    Varanasi is famous for traditional
+                    silk weaving and beautifully
+                    designed textiles.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         GALLERY
+    ====================================================== -->
+
+    <section id="gallery" class="section alternate">
+
+
+        <p class="section-label">
+            DIGITAL HERITAGE
+        </p>
+
+
+        <h2>
+            Digital Heritage Gallery
+        </h2>
+
+
+        <div class="content-grid">
+
+
+            <div class="content-card">
+
+                <h3>
+                    📸 Historic Ghats
+                </h3>
+
+                <p>
+                    Digital photographs can document
+                    the changing landscape and heritage
+                    of Varanasi.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🏛️ Heritage Architecture
+                </h3>
+
+                <p>
+                    Preserve images and information
+                    about historic buildings and monuments.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🎭 Cultural Life
+                </h3>
+
+                <p>
+                    Record festivals, music, crafts,
+                    rituals and everyday cultural practices.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HERITAGE STORIES
+    ====================================================== -->
+
+    <section id="stories" class="section">
+
+
+        <p class="section-label">
+            STORIES OF BANARAS
+        </p>
+
+
+        <h2>
+            Heritage Stories
+        </h2>
+
+
+        <div class="content-grid">
+
+
+            <div class="content-card">
+
+                <h3>
+                    📜 Stories of the Ghats
+                </h3>
+
+                <p>
+                    Every ghat has its own history,
+                    traditions and stories developed
+                    over centuries.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🛕 Legends of Kashi
+                </h3>
+
+                <p>
+                    Varanasi has a rich collection
+                    of legends and cultural narratives.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🌊 Life Along the Ganga
+                </h3>
+
+                <p>
+                    The Ganga has shaped the city's
+                    culture, traditions and daily life.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TOURISM HERO
+    ====================================================== -->
+
+    <section id="tourism" class="tourism-hero">
+
+
+        <div class="hero-content">
+
+
+            <p class="subtitle">
+                VISIT VARANASI
+            </p>
+
+
+            <h2>
+                Explore the Soul of Varanasi
+            </h2>
+
+
+            <p>
+
+                Discover ancient temples, sacred ghats,
+                spiritual traditions, vibrant culture
+                and unforgettable experiences.
+
+            </p>
+
+
+            <a href="#places" class="button">
+                Explore Places
+            </a>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TOURISM INTRO
+    ====================================================== -->
+
+    <section class="tour-info">
+
+
+        <p class="section-label">
+            TOURISM IN VARANASI
+        </p>
+
+
+        <h2>
+            Experience the World's Spiritual Heritage
+        </h2>
+
+
+        <p class="description">
+
+            Varanasi attracts visitors with its ancient
+            temples, historic ghats, traditional music,
+            festivals, handicrafts, spiritual traditions
+            and local food. A visit provides an opportunity
+            to experience India's rich heritage and culture
+            in one place.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAMOUS TOURIST PLACES
+    ====================================================== -->
+
+    <section id="places" class="tourist-places">
+
+
+        <p class="section-label">
+            MUST VISIT
+        </p>
+
+
+        <h2>
+            Famous Tourist Places
+        </h2>
+
+
+        <div class="place-container">
+
+
+            <!-- KASHI -->
+
+            <div class="place-card">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1561361058-c24cecae35ca?auto=format&fit=crop&w=900&q=80"
+                    alt="Kashi Vishwanath Temple"
+                >
+
+
+                <div class="place-card-content">
+
+                    <h3>
+                        🛕 Kashi Vishwanath Temple
+                    </h3>
+
+                    <p>
+                        One of the most important Hindu
+                        temples dedicated to Lord Shiva
+                        and a major pilgrimage destination.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DASHASHWAMEDH -->
+
+            <div class="place-card">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1592639296346-560c37a0b0d0?auto=format&fit=crop&w=900&q=80"
+                    alt="Dashashwamedh Ghat"
+                >
+
+
+                <div class="place-card-content">
+
+                    <h3>
+                        🌊 Dashashwamedh Ghat
+                    </h3>
+
+                    <p>
+                        A famous ghat known for the
+                        spectacular evening Ganga Aarti
+                        performed every day.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SARNATH -->
+
+            <div class="place-card">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80"
+                    alt="Sarnath"
+                >
+
+
+                <div class="place-card-content">
+
+                    <h3>
+                        ☸️ Sarnath
+                    </h3>
+
+                    <p>
+                        A significant Buddhist heritage
+                        site where Gautama Buddha is
+                        traditionally said to have delivered
+                        his first sermon.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ASSI -->
+
+            <div class="place-card">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80"
+                    alt="Assi Ghat"
+                >
+
+
+                <div class="place-card-content">
+
+                    <h3>
+                        🌅 Assi Ghat
+                    </h3>
+
+                    <p>
+                        A peaceful and popular ghat where
+                        visitors enjoy sunrise, boat rides
+                        and cultural activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- MANIKARNIKA -->
+
+            <div class="place-card">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1592639296346-560c37a0b0d0?auto=format&fit=crop&w=900&q=80"
+                    alt="Manikarnika Ghat"
+                >
+
+
+                <div class="place-card-content">
+
+                    <h3>
+                        🔥 Manikarnika Ghat
+                    </h3>
+
+                    <p>
+                        One of the oldest and most
+                        significant cremation ghats
+                        located along the River Ganga.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- RAMNAGAR -->
+
+            <div class="place-card">
+
+
+                <img
+                    src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80"
+                    alt="Ramnagar Fort"
+                >
+
+
+                <div class="place-card-content">
+
+                    <h3>
+                        🏰 Ramnagar Fort
+                    </h3>
+
+                    <p>
+                        A historic fort situated near
+                        the Ganga, known for its architecture,
+                        museum and royal heritage.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BEST TIME
+    ====================================================== -->
+
+    <section id="best-time" class="best-time">
+
+
+        <p class="section-label">
+            PLAN YOUR VISIT
+        </p>
+
+
+        <h2>
+            Best Time to Visit Varanasi
+        </h2>
+
+
+        <div class="time-container">
+
+
+            <div class="time-card">
+
+                <h3>
+                    🍂 October – November
+                </h3>
+
+                <p>
+                    Pleasant weather and several
+                    cultural and religious festivals
+                    make this period attractive for visitors.
+                </p>
+
+            </div>
+
+
+            <div class="time-card">
+
+                <h3>
+                    ❄️ December – February
+                </h3>
+
+                <p>
+                    Cool weather is suitable for
+                    sightseeing, temple visits and
+                    exploring the ghats.
+                </p>
+
+            </div>
+
+
+            <div class="time-card">
+
+                <h3>
+                    🌸 March – April
+                </h3>
+
+                <p>
+                    A good period to experience
+                    festivals, local traditions and
+                    the colourful atmosphere of the city.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EXPERIENCES
+    ====================================================== -->
+
+    <section id="experiences" class="experiences">
+
+
+        <p class="section-label">
+            EXPERIENCE VARANASI
+        </p>
+
+
+        <h2>
+            Must-Try Experiences
+        </h2>
+
+
+        <div class="experience-container">
+
+
+            <div class="experience-card">
+
+                <span>
+                    🪔
+                </span>
+
+                <h3>
+                    Ganga Aarti
+                </h3>
+
+                <p>
+                    Experience the spiritual atmosphere
+                    of the evening Ganga Aarti at the ghats.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <span>
+                    🚣
+                </span>
+
+                <h3>
+                    Boat Ride
+                </h3>
+
+                <p>
+                    Enjoy a sunrise or sunset boat ride
+                    along the historic ghats.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <span>
+                    🍛
+                </span>
+
+                <h3>
+                    Local Food
+                </h3>
+
+                <p>
+                    Try kachori-sabzi, tamatar chaat,
+                    lassi and Banarasi paan.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card">
+
+                <span>
+                    🎨
+                </span>
+
+                <h3>
+                    Banarasi Crafts
+                </h3>
+
+                <p>
+                    Explore traditional Banarasi silk,
+                    handicrafts and artistic traditions.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TOUR PLAN
+    ====================================================== -->
+
+    <section id="tour-plan" class="tour-plan">
+
+
+        <p class="section-label">
+            SUGGESTED ITINERARY
+        </p>
+
+
+        <h2>
+            Suggested Varanasi Tour
+        </h2>
+
+
+        <div class="plan-container">
+
+
+            <div class="plan-card">
+
+
+                <h3>
+                    📅 Day 1
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        Visit Kashi Vishwanath Temple
+                    </li>
+
+                    <li>
+                        Explore Dashashwamedh Ghat
+                    </li>
+
+                    <li>
+                        Enjoy a Ganga boat ride
+                    </li>
+
+                    <li>
+                        Attend evening Ganga Aarti
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+            <div class="plan-card">
+
+
+                <h3>
+                    📅 Day 2
+                </h3>
+
+
+                <ul>
+
+                    <li>
+                        Visit Sarnath
+                    </li>
+
+                    <li>
+                        Explore Buddhist monuments
+                    </li>
+
+                    <li>
+                        Visit Ramnagar Fort
+                    </li>
+
+                    <li>
+                        Explore local markets
+                    </li>
+
+                </ul>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TRANSPORTATION
+    ====================================================== -->
+
+    <section id="transport" class="section alternate">
+
+
+        <p class="section-label">
+            GETTING AROUND
+        </p>
+
+
+        <h2>
+            Transportation
+        </h2>
+
+
+        <div class="content-grid">
+
+
+            <div class="content-card">
+
+                <h3>
+                    🚆 Railway
+                </h3>
+
+                <p>
+                    Varanasi is connected by railway
+                    with many major cities across India.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🛺 Local Transport
+                </h3>
+
+                <p>
+                    Auto-rickshaws, e-rickshaws and
+                    taxis are commonly used for local travel.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🚣 Boat Ride
+                </h3>
+
+                <p>
+                    Boats provide a unique way to
+                    experience the historic ghats
+                    from the Ganga.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INTERACTIVE MAP
+    ====================================================== -->
+
+    <section id="map" class="section">
+
+
+        <p class="section-label">
+            EXPLORE
+        </p>
+
+
+        <h2>
+            Interactive Map
+        </h2>
+
+
+        <p class="description">
+
+            Explore Varanasi and locate important
+            heritage and tourism destinations.
+
+        </p>
+
+
+        <div style="
+            max-width:1000px;
+            margin:40px auto 0;
+            border-radius:12px;
+            overflow:hidden;
+            box-shadow:0 5px 20px rgba(0,0,0,0.15);
+        ">
+
+
+            <iframe
+
+                src="https://www.google.com/maps?q=Varanasi,India&output=embed"
+
+                width="100%"
+
+                height="450"
+
+                style="border:0;"
+
+                loading="lazy">
+
+            </iframe>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TRAVEL TIPS
+    ====================================================== -->
+
+    <section id="travel-tips" class="travel-tips">
+
+
+        <p class="section-label">
+            TRAVEL SMART
+        </p>
+
+
+        <h2>
+            Travel Tips
+        </h2>
+
+
+        <ul class="tips-list">
+
+
+            <li>
+                👕 Wear comfortable clothes while exploring the city.
+            </li>
+
+
+            <li>
+                💧 Carry drinking water during sightseeing.
+            </li>
+
+
+            <li>
+                🙏 Respect local religious customs and traditions.
+            </li>
+
+
+            <li>
+                📸 Ask permission before photographing people.
+            </li>
+
+
+            <li>
+                🧹 Keep the ghats and heritage sites clean.
+            </li>
+
+
+            <li>
+                🕐 Plan temple and sightseeing visits in advance.
+            </li>
+
+
+        </ul>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TOURIST GUIDE
+    ====================================================== -->
+
+    <section id="tour-guide" class="tour-info">
+
+
+        <p class="section-label">
+            TOURIST GUIDE
+        </p>
+
+
+        <h2>
+            Plan Your Varanasi Trip
+        </h2>
+
+
+        <div class="tour-info-grid">
+
+
+            <div class="tour-info-card">
+
+                <h3>
+                    🧳 Before You Travel
+                </h3>
+
+                <p>
+                    Plan your accommodation, transportation,
+                    temple visits and sightseeing schedule
+                    before arriving.
+                </p>
+
+            </div>
+
+
+            <div class="tour-info-card">
+
+                <h3>
+                    📅 Suggested Duration
+                </h3>
+
+                <p>
+                    A two-day itinerary can cover many
+                    of the city's major heritage and
+                    tourism experiences.
+                </p>
+
+            </div>
+
+
+            <div class="tour-info-card">
+
+                <h3>
+                    🙏 Responsible Tourism
+                </h3>
+
+                <p>
+                    Respect local communities, religious
+                    traditions and heritage sites while
+                    travelling.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DEVELOPMENT
+    ====================================================== -->
+
+    <section id="development" class="section alternate">
+
+
+        <p class="section-label">
+            FUTURE OF VARANASI
+        </p>
+
+
+        <h2>
+            Smart Development & Preservation
+        </h2>
+
+
+        <div class="content-grid">
+
+
+            <div class="content-card">
+
+                <h3>
+                    🏗️ Urban Development
+                </h3>
+
+                <p>
+                    Modern infrastructure can improve
+                    connectivity and visitor facilities
+                    while respecting heritage areas.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    🌱 Heritage Preservation
+                </h3>
+
+                <p>
+                    Digital documentation and responsible
+                    tourism can contribute to protecting
+                    cultural heritage.
+                </p>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <h3>
+                    💻 Digital Heritage
+                </h3>
+
+                <p>
+                    Technology can make historical
+                    information accessible to students,
+                    tourists and researchers.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SEARCH
+    ====================================================== -->
+
+    <section id="search" class="section">
+
+
+        <p class="section-label">
+            EXPLORE
+        </p>
+
+
+        <h2>
+            Search Varanasi Heritage
+        </h2>
+
+
+        <p class="description">
+
+            Use the navigation menu to explore temples,
+            ghats, historical places, culture, food,
+            festivals and tourism information.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ADMIN
+    ====================================================== -->
+
+    <section id="admin" class="section alternate">
+
+
+        <p class="section-label">
+            PROJECT
+        </p>
+
+
+        <h2>
+            Project Administration
+        </h2>
+
+
+        <p class="description">
+
+            This website is developed as a CSE mini-project
+            focused on the digital presentation,
+            documentation and preservation of Varanasi's
+            cultural heritage.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ABOUT PROJECT
+    ====================================================== -->
+
+    <section id="about-project" class="section">
+
+
+        <p class="section-label">
+            CSE MINI PROJECT
+        </p>
+
+
+        <h2>
+            About Varanasi Heritage Project
+        </h2>
+
+
+        <p class="description">
+
+            The Varanasi Heritage project aims to digitally
+            present the historical, cultural, religious and
+            tourism significance of Varanasi in an easy-to-
+            explore website.
+
+            The project combines web technologies with
+            digital heritage documentation to make
+            information about the city accessible to
+            students, tourists and visitors.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer id="footer">
+
+
+        <h3>
+            🛕 Varanasi Heritage
+        </h3>
+
+
+        <p>
+            Preserving and celebrating the cultural essence
+            of India's oldest living city.
+        </p>
+
+
+        <div class="copyright">
+
+            ©️ 2026 Varanasi Heritage Project |
+            CSE Mini Project
+
+        </div>
+
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         BACK TO TOP
+    ====================================================== -->
+
+    <a href=index.html class="top-button">
+        ↑
+    </a>
+
+
+</body>
+
+</html>

@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>OneScan Varanasi | Digital Trip Pass</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background:
+                linear-gradient(
+                    rgba(61, 27, 22, 0.94),
+                    rgba(61, 27, 22, 0.94)
+                );
+
+            min-height: 100vh;
+
+            color: #3d241c;
+
+        }
+
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        .navbar {
+
+            background: #351615;
+
+            color: white;
+
+            padding: 18px 6%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+        .logo {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+        }
+
+
+        .home-link {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+        }
+
+
+        .home-link:hover {
+
+            color: #f5a623;
+
+        }
+
+
+        /* =========================
+           PAGE
+        ========================= */
+
+        .page {
+
+            max-width: 950px;
+
+            margin: 45px auto;
+
+            padding: 0 20px;
+
+        }
+
+
+        .heading {
+
+            text-align: center;
+
+            color: white;
+
+            margin-bottom: 30px;
+
+        }
+
+
+        .heading h1 {
+
+            font-size: 40px;
+
+            margin-bottom: 10px;
+
+        }
+
+
+        .heading p {
+
+            font-size: 17px;
+
+        }
+
+
+        .gold {
+
+            color: #f5a623;
+
+        }
+
+
+        /* =========================
+           PASS
+        ========================= */
+
+        .pass {
+
+            background: white;
+
+            border-radius: 18px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 15px 45px rgba(0,0,0,0.35);
+
+        }
+
+
+        .pass-header {
+
+            background: #4d2220;
+
+            color: white;
+
+            padding: 25px;
+
+            text-align: center;
+
+        }
+
+
+        .pass-header h2 {
+
+            font-size: 28px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .pass-header p {
+
+            color: #f5c46a;
+
+        }
+
+
+        .pass-body {
+
+            padding: 35px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 280px;
+
+            gap: 35px;
+
+        }
+
+
+        /* =========================
+           TRIP DETAILS
+        ========================= */
+
+        .details h3 {
+
+            color: #4d2220;
+
+            margin-bottom: 20px;
+
+            font-size: 22px;
+
+        }
+
+
+        .detail-row {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            padding: 13px 0;
+
+            border-bottom: 1px solid #eee;
+
+        }
+
+
+        .detail-row span:first-child {
+
+            color: #777;
+
+        }
+
+
+        .detail-row strong {
+
+            color: #4d2220;
+
+        }
+
+
+        /* =========================
+           SERVICES
+        ========================= */
+
+        .services {
+
+            margin-top: 25px;
+
+        }
+
+
+        .services h3 {
+
+            color: #4d2220;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        .service-grid {
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 10px;
+
+        }
+
+
+        .service {
+
+            background: #f8f1e6;
+
+            padding: 12px;
+
+            border-radius: 7px;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================
+           QR
+        ========================= */
+
+        .qr-section {
+
+            text-align: center;
+
+            border-left: 1px dashed #ccc;
+
+            padding-left: 30px;
+
+        }
+
+
+        .qr-section h3 {
+
+            color: #4d2220;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        #qrcode {
+
+            display: flex;
+
+            justify-content: center;
+
+            margin: 15px 0;
+
+        }
+
+
+        #qrcode img {
+
+            border: 8px solid white;
+
+        }
+
+
+        .scan-text {
+
+            font-size: 13px;
+
+            color: #777;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* =========================
+           STATUS
+        ========================= */
+
+        .status {
+
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 8px 18px;
+
+            background: #e7f5e9;
+
+            color: #28753a;
+
+            border-radius: 20px;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================
+           FOOTER AREA
+        ========================= */
+
+        .pass-footer {
+
+            background: #faf7f1;
+
+            padding: 20px 35px;
+
+            border-top: 1px solid #eee;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+        }
+
+
+        .trip-id {
+
+            font-size: 14px;
+
+            color: #777;
+
+        }
+
+
+        .trip-id strong {
+
+            color: #4d2220;
+
+        }
+
+
+        .demo-note {
+
+            text-align: center;
+
+            color: white;
+
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            opacity: 0.8;
+
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .action-buttons {
+
+            text-align: center;
+
+            margin-top: 25px;
+
+        }
+
+
+        .action-buttons button {
+
+            padding: 13px 25px;
+
+            border: none;
+
+            border-radius: 7px;
+
+            background: #d88918;
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin: 5px;
+
+        }
+
+
+        .action-buttons button:hover {
+
+            background: #b86f0d;
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 750px) {
+
+            .pass-body {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .qr-section {
+
+                border-left: none;
+
+                border-top: 1px dashed #ccc;
+
+                padding-left: 0;
+
+                padding-top: 30px;
+
+            }
+
+
+            .service-grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
+
+            .pass-footer {
+
+                flex-direction: column;
+
+                gap: 10px;
+
+            }
+
+
+            .heading h1 {
+
+                font-size: 32px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+
+            🛕 OneScan Varanasi
+
+        </div>
+
+
+        <a
+            href="index.html"
+            class="home-link"
+        >
+
+            ← Home
+
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================
+         HEADING
+    ========================= -->
+
+    <section class="page">
+
+        <div class="heading">
+
+            <h1>
+
+                Your
+                <span class="gold">
+                    OneScan
+                </span>
+                Trip Pass
+
+            </h1>
+
+
+            <p>
+
+                One QR. One Trip. One Varanasi Experience.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =========================
+             PASS
+        ========================= -->
+
+        <div class="pass">
+
+
+            <div class="pass-header">
+
+                <h2>
+                    🛕 Varanasi Smart Travel Pass
+                </h2>
+
+                <p>
+                    Integrated Digital Tourism Pass
+                </p>
+
+            </div>
+
+
+
+            <div class="pass-body">
+
+
+                <!-- =========================
+                     DETAILS
+                ========================= -->
+
+                <div class="details">
+
+                    <h3>
+                        📋 Trip Information
+                    </h3>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Trip ID
+                        </span>
+
+                        <strong id="tripId">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Travellers
+                        </span>
+
+                        <strong id="people">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Duration
+                        </span>
+
+                        <strong id="days">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Budget
+                        </span>
+
+                        <strong id="budget">
+                            --
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>
+                            Estimated Cost
+                        </span>
+
+                        <strong id="cost">
+                            --
+                        </strong>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         SERVICES
+                    ========================= -->
+
+                    <div class="services">
+
+                        <h3>
+                            Included Services
+                        </h3>
+
+
+                        <div class="service-grid">
+
+
+                            <div class="service">
+                                🏨 Accommodation
+                            </div>
+
+
+                            <div class="service">
+                                🚕 Transportation
+                            </div>
+
+
+                            <div class="service">
+                                🛕 Temple Visits
+                            </div>
+
+
+                            <div class="service">
+                                🌊 Ganga Experiences
+                            </div>
+
+
+                            <div class="service">
+                                🍛 Food Experiences
+                            </div>
+
+
+                            <div class="service">
+                                🛍️ Local Experiences
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <span class="status">
+
+                        ✓ TRIP CONFIRMED
+
+                    </span>
+
+                </div>
+
+
+
+                <!-- =========================
+                     QR
+                ========================= -->
+
+                <div class="qr-section">
+
+                    <h3>
+                        📱 Scan Your Trip QR
+                    </h3>
+
+
+                    <div id="qrcode"></div>
+
+
+                    <p class="scan-text">
+
+                        Scan this single QR code
+                        to access your complete
+                        Varanasi trip pass.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =========================
+                 FOOTER
+            ========================= -->
+
+            <div class="pass-footer">
+
+                <div class="trip-id">
+
+                    OneScan ID:
+
+                    <strong id="footerTripId">
+                        --
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    Status:
+
+                    <strong>
+                        Confirmed ✓
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =========================
+             ACTIONS
+        ========================= -->
+
+        <div class="action-buttons">
+
+            <button
+                onclick="printPass()"
+            >
+                🖨️ Print Pass
+            </button>
+
+
+            <button
+                onclick="goHome()"
+            >
+                🏠 Back to Home
+            </button>
+
+        </div>
+
+
+        <p class="demo-note">
+
+            Prototype demonstration:
+            The QR represents the unified digital trip
+            pass for the selected Varanasi package.
+
+        </p>
+
+
+    </section>
+
+
+
+    <script>
+
+        /* =========================
+           GET CONFIRMED TRIP
+        ========================= */
+
+        const trip =
+            JSON.parse(
+                localStorage.getItem("confirmedTrip")
+            );
+
+
+        if (!trip) {
+
+            alert(
+                "No confirmed trip found. Please plan your trip first."
+            );
+
+            window.location.href =
+                "plan.html";
+
+        }
+
+
+
+        /* =========================
+           DISPLAY DATA
+        ========================= */
+
+        document.getElementById("tripId")
+            .textContent =
+            trip.tripId;
+
+
+        document.getElementById("footerTripId")
+            .textContent =
+            trip.tripId;
+
+
+        document.getElementById("people")
+            .textContent =
+            trip.people;
+
+
+        document.getElementById("days")
+            .textContent =
+            trip.days
+            + (Number(trip.days) === 1
+                ? " Day"
+                : " Days");
+
+
+        document.getElementById("budget")
+            .textContent =
+            "₹"
+            + Number(trip.budget)
+                .toLocaleString("en-IN");
+
+
+        document.getElementById("cost")
+            .textContent =
+            "₹"
+            + Number(trip.estimatedCost)
+                .toLocaleString("en-IN");
+
+
+
+
+        /* =========================
+           QR DATA
+        ========================= */
+
+        const qrData =
+    "http://192.168.0.5:5500/Scan.html"
+    + "?tripId=" + encodeURIComponent(trip.tripId)
+    + "&people=" + encodeURIComponent(trip.people)
+    + "&days=" + encodeURIComponent(trip.days)
+    + "&budget=" + encodeURIComponent(trip.budget)
+    + "&cost=" + encodeURIComponent(trip.estimatedCost);
+
+        /* =========================
+           GENERATE QR
+        ========================= */
+
+            const qrImage =
+    document.createElement("img");
+
+qrImage.src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=210x210&data="
+    + encodeURIComponent(qrData);
+
+qrImage.alt =
+    "OneScan Varanasi Trip QR Code";
+
+qrImage.width = 210;
+qrImage.height = 210;
+
+document
+    .getElementById("qrcode")
+    .appendChild(qrImage);
+
+
+
+        /* =========================
+           PRINT
+        ========================= */
+
+        function printPass() {
+
+            window.print();
+
+        }
+
+
+
+        /* =========================
+           HOME
+        ========================= */
+
+        function goHome() {
+
+            window.location.href =
+                "index.html";
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
